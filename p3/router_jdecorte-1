@@ -1,0 +1,42 @@
+#!/bin/sh
+
+vtysh << END
+conf t
+    no ipv6 forwarding
+
+    interface eth0
+        ip address 10.1.1.1/30
+    exit
+    interface eth1
+        ip address 10.1.1.5/30
+    exit
+    interface eth2
+        ip address 10.1.1.9/30
+    exit
+
+    ! if link like eth0-eth1 is down, the bgp link will be down too.
+    ! we need a loopback to avoid this
+    interface lo
+        ip address 1.1.1.1/32
+    exit
+
+    router bgp 1
+        neighbor 42belgium peer-group
+        neighbor 42belgium remote-as 1
+        neighbor 42belgium update-source lo
+
+        ! add a trusted range of IPs for neighbors
+        bgp listen range 1.1.1.0/29 peer-group 42belgium
+
+        address-family l2vpn evpn
+            neighbor 42belgium activate
+            neighbor 42belgium a route-reflector-client
+        exit-address-family
+    exit
+
+    ! create a zone with leaf's and the spine (RR)
+    router ospf
+        network 0.0.0.0/0 area 0
+    exit
+
+END
