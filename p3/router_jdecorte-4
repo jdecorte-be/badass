@@ -24,9 +24,9 @@ conf t
     exit
 
     ! enable BGP with AS 1
-    router bgp 1
+    router bgp 42
         ! add RR as neighbor
-        neighbor 1.1.1.1 remote-as 1
+        neighbor 1.1.1.1 remote-as 42
 
         ! communicate using loopback of RR
         neighbor 1.1.1.1 update-source lo

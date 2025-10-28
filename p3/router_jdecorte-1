@@ -20,17 +20,17 @@ conf t
         ip address 1.1.1.1/32
     exit
 
-    router bgp 1
-        neighbor 42belgium peer-group
-        neighbor 42belgium remote-as 1
-        neighbor 42belgium update-source lo
+    router bgp 42
+        neighbor belgium peer-group
+        neighbor belgium remote-as 42
+        neighbor belgium update-source lo
 
         ! add a trusted range of IPs for neighbors
-        bgp listen range 1.1.1.0/29 peer-group 42belgium
+        bgp listen range 1.1.1.0/29 peer-group belgium
 
         address-family l2vpn evpn
-            neighbor 42belgium activate
-            neighbor 42belgium a route-reflector-client
+            neighbor belgium activate
+            neighbor belgium route-reflector-client
         exit-address-family
     exit
 
