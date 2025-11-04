@@ -1,3 +1,61 @@
+<h1 align="center">
+  <a href="https://github.com/jdecorte-be/42-BADASS"><img src=".img/banner.png" alt="42-BADASS" ></a>
+  42-BADASS
+  <br>
+</h1>
+
+<p align="center">
+  <a href="https://github.com/jdecorte-be/42-BADASS">
+    <img src="https://shields.io/badge/42--BADASS-System%20Programming-blueviolet?logoColor=white&labelColor=000000&color=8A2BE2"
+         alt="42-BADASS System Programming">
+  </a>
+  <a href="https://github.com/jdecorte-be/42-BADASS">
+    <img src="https://shields.io/badge/Platform-Linux%20x86__64-blue?logo=linux&logoColor=white&labelColor=000000"
+         alt="Linux x86_64 Platform">
+  </a>
+  <a href="https://github.com/jdecorte-be/42-BADASS/stargazers">
+    <img src="https://shields.io/github/stars/jdecorte-be/42-BADASS?logo=star&logoColor=white&labelColor=000000&color=yellow"
+         alt="GitHub Stars">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/jdecorte-be/42-BADASS/issues">
+    <img src="https://shields.io/github/issues/jdecorte-be/42-BADASS?logoColor=white&labelColor=000000&color=orange"
+         alt="Open Issues">
+  </a>
+  <a href="https://github.com/jdecorte-be/42-BADASS">
+    <img src="https://shields.io/github/repo-size/jdecorte-be/42-BADASS?logo=database&logoColor=white&labelColor=000000&color=purple"
+         alt="Repository Size">
+  </a>
+  <a href="https://github.com/jdecorte-be/42-BADASS">
+    <img src="https://shields.io/github/languages/top/jdecorte-be/42-BADASS?logo=code&logoColor=white&labelColor=000000&color=green"
+         alt="Top Language">
+  </a>
+  <a href="https://github.com/jdecorte-be/42-BADASS">
+    <img src="https://shields.io/badge/⚙️-SYSTEM%20PROJECTS-informational?labelColor=000000&color=0078D7"
+         alt="System Projects Badge">
+  </a>
+  <a href="https://github.com/jdecorte-be/42-BADASS">
+    <img src="https://shields.io/badge/42-School%20Project-9cf?logo=42&logoColor=white&labelColor=000000&color=2E8B57"
+         alt="42 School Project Badge">
+  </a>  
+</p>
+
+<p align="center">
+  <a href="#overview">Overview</a> •
+  <a href="#features">Features</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#usage">Usage</a> •
+  <a href="#technical-details">Technical Details</a> •
+  <a href="#architecture">Architecture</a> •
+  <a href="#license">License</a>
+</p>
+
+<div align="center">
+  
+</div>
+
 
 # 🧩 Part 1 - GNS3 Configuration with docker
 This first part of the **BADASS (Bgp At Doors of Autonomous Systems is Simple)** project introduces the setup of a virtual lab environment using **GNS3** and **Docker**.  
