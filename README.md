@@ -130,4 +130,72 @@ Logical segmentation avoids deploying separate physical networks for each group.
 ![P2](.img/p2.png)
 ![VTEP](.img/vtep.png)
 
-# 🌍 Part 3 — Discovering BGP with EVPN
+🌍 Part 3 — Discovering BGP with EVPN
+------------------------------------
+
+### 🛰️ Introduction
+
+**BGP EVPN (Ethernet VPN)** combines **BGP (Border Gateway Protocol)** and **EVPN (Ethernet VPN)** to create a scalable and efficient **Layer 2 and Layer 3 network overlay** on top of an IP-based infrastructure.  
+This part of the BADASS project introduces how **VXLAN tunnels** are dynamically managed through **BGP EVPN route exchanges** — eliminating the need for static configurations.
+
+---
+
+### ⚙️ Objectives
+
+By the end of this part, you should be able to:
+
+1. Configure **BGP sessions** between routers to exchange EVPN routes.  
+2. Establish **VXLAN tunnels automatically** using BGP control-plane signaling.  
+3. Understand and implement **EVPN route types**.  
+4. Validate the **end-to-end connectivity** between hosts over the EVPN fabric.  
+5. Visualize how **MAC and IP learning** are distributed using the BGP EVPN mechanism.
+
+---
+
+### 🧠 Key Concepts
+
+| Concept | Description |
+|----------|--------------|
+| **BGP (Border Gateway Protocol)** | A dynamic routing protocol that exchanges network reachability information between autonomous systems (AS). |
+| **EVPN (Ethernet VPN)** | An extension of BGP for Layer 2 VPNs that allows MAC/IP address learning and advertisement through BGP instead of flooding. |
+| **VXLAN (Virtual eXtensible LAN)** | A tunneling technology that encapsulates Layer 2 Ethernet frames in Layer 3 UDP packets (port `4789`). |
+| **VNI (VXLAN Network Identifier)** | 24-bit segment ID used to identify logical Layer 2 domains (similar to VLAN ID). |
+| **VTEP (VXLAN Tunnel End Point)** | The device that performs VXLAN encapsulation and decapsulation at the network edge. |
+
+---
+
+### 📡 EVPN Route Types
+
+| Route Type | Name | Description |
+|-------------|------|-------------|
+| **Type 2** | MAC/IP Advertisement | Advertises MAC and IP addresses learned from connected hosts. |
+| **Type 3** | Inclusive Multicast Ethernet Tag | Used for broadcast, unknown unicast, and multicast (BUM) traffic. |
+| **Type 5** | IP Prefix Route | Advertises IP prefixes for L3 forwarding between VNIs (inter-VNI routing). |
+
+These route types enable **multi-tenant segmentation** and **efficient control-plane learning** without relying on flooding mechanisms.
+
+---
+
+### 🧱 Topology Example
+
+Below is an example of a minimal **EVPN fabric** composed of two routers and two hosts connected via VXLAN tunnels:
+
+```text
+          +---------------------+
+          |     Host 1 (VNI 10) |
+          +----------+----------+
+                     |
+               +-------------+
+               |   Router A  |--- BGP EVPN ---+
+               |  (VTEP 1)   |                |
+               +-------------+                |
+                                              |
+                                         +-------------+
+                                         |   Router B  |
+                                         |  (VTEP 2)   |
+                                         +------+------+ 
+                                                |
+                                       +--------+--------+
+                                       |   Host 2 (VNI 10) |
+                                       +--------------------+
+
