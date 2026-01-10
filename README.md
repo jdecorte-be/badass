@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="https://github.com/jdecorte-be/42-BADASS"><img src=".img/banner.png" alt="42-BADASS" ></a>
+  <a href="https://github.com/jdecorte-be/42-BADASS"><img src="assets/banner.png" alt="42-BADASS" ></a>
   42-BADASS
   <br>
 </h1>
