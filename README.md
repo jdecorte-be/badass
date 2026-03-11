@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="https://github.com/jdecorte-be/42-BADASS"><img src="assets/banner.png" alt="42-BADASS" ></a>
+  <a href="https://github.com/jdecorte-be/42-BADASS"><img src=".assets/banner.png" alt="42-BADASS" ></a>
   42-BADASS
   <br>
 </h1>
@@ -99,7 +99,7 @@ A routing-capable image that will be used as your **virtual router**.
 # 🌐 Part 2 — Discorvering VXLAN
 
 ## VLAN - Virtual LAN
-![VLAN Diagram](.img/vlan.png)
+![VLAN Diagram](.assets/vlan.png)
 A VLAN (Virtual Local Area Network) is a logical subdivision of a physical network.
 
 It allows you to group devices together—even if they’re not physically connected to the same switch—so that they behave as if they are on the same local network.
@@ -127,8 +127,8 @@ By isolating users or devices into different VLANs, communication between them r
 Logical segmentation avoids deploying separate physical networks for each group. VLANs share infrastructure, cutting equipment and maintenance costs while simplifying network management.  
 ➡️ [Learn more](http://cisco.ofppt.info/ccna2/course/module3/3.1.1.2/3.1.1.2.html)
 
-![P2](.img/p2.png)
-![VTEP](.img/vtep.png)
+![P2](.assets/p2.png)
+![VTEP](.assets/vtep.png)
 
 🌍 Part 3 — Discovering BGP with EVPN
 ------------------------------------
